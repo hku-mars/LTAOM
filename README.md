@@ -131,27 +131,27 @@ Finally, follow FAST_LIO/map_eva/ReadMe.txt to do evaluation.
 
 Nclt 20120202 map agianst statellite image
 <div align="center">
-<img src="https://github.com/zuhaozou2017/LTAOM/blob/main/loop_optimization/description_images/nclt_20120202_statellite.png" width = 98% />
+<img src="https://github.com/hku-mars/LTAOM/blob/main/loop_optimization/description_images/nclt_20120202_statellite.png" width = 98% />
 </div>
 
 Comparison on Mulran Riverside02
 <div align="center">
-<img src="https://github.com/zuhaozou2017/LTAOM/blob/main/loop_optimization/description_images/map_compare_riverside02.png" width = 98% />
+<img src="https://github.com/hku-mars/LTAOM/blob/main/loop_optimization/description_images/map_compare_riverside02.png" width = 98% />
 </div>
 
 Comparison on Mulran DCC02
 <div align="center">
-<img src="https://github.com/zuhaozou2017/LTAOM/blob/main/loop_optimization/description_images/map_compare_DCC02.png" width = 98% />
+<img src="https://github.com/hku-mars/LTAOM/blob/main/loop_optimization/description_images/map_compare_DCC02.png" width = 98% />
 </div>
 
 Multilevel building (structurally-similar scene) map
 <div align="center">
-<img src="https://github.com/zuhaozou2017/LTAOM/blob/main/loop_optimization/description_images/Multilevel_map.png" width = 98% />
+<img src="https://github.com/hku-mars/LTAOM/blob/main/loop_optimization/description_images/Multilevel_map.png" width = 98% />
 </div>
 
 Multisession map stitching reuslt
 <div align="center">
-<img src="https://github.com/zuhaozou2017/LTAOM/blob/main/loop_optimization/description_images/multisession_map.png" width = 98% />
+<img src="https://github.com/hku-mars/LTAOM/blob/main/loop_optimization/description_images/multisession_map.png" width = 98% />
 </div>
 
 ## 6. Report our problems and bugs
