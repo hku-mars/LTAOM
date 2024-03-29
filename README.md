@@ -211,7 +211,7 @@ KeySet fixedVariables_bkq_;
 
 int update_count_bkq_;
 
-
+------------------------------------------------------
 
 // to the place between lines 97 ~ 99 of ISAM2.h
 
@@ -219,7 +219,7 @@ void backup(); // to line 199 of ISAM2.h
 
 void recover(); // to line 200 of ISAM2.h
 
-
+------------------------------------------------------
 
 // from line 395 of ISAM2.cpp
 
