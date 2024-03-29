@@ -34,6 +34,11 @@ Our gcc/g++ version is gcc/g++ -7.
 
 ### 2.6 **Eigen3**
 
+### 2.7 **TBB**
+Our tbb: Threading Building Blocks 2019 Update 9
+
+Download it from github and build it in a folder. Link it using hard directory in STD Cmakelist.txt.
+
 ## 3. Build
 Clone this repository and catkin_make:
 ```
