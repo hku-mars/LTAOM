@@ -4,7 +4,7 @@
 ## 1. Introduction
 **LTA-OM** is an efficient, robust, and accurate SLAM system. It integrates LIO, loop detection, loop optimization, LTA modules. It also supports multi-session mode.
 <div align="center">
-<img src="https://github.com/hku-mars/LTAOM/blob/main/loop_optimization/description_images/LTAOM_pipeline.png" width = 98% />
+<img src="https://github.com/hku-mars/LTAOM/blob/main/loop_optimization/description_images/LTAOM_pipeline.jpg" width = 98% />
 </div>
 
 ### 1.1 Paper
