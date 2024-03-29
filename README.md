@@ -186,55 +186,105 @@ For commercial use, please contact me < zuhaozouATyahoo.com > and Dr. Fu Zhang <
 
 ## Note
 // to the place between lines 97 ~ 99 of ISAM2.h
+
 Values theta_bkq_;
+
 VariableIndex variableIndex_bkq_;
+
 mutable VectorValues delta_bkq_;
+
 mutable VectorValues deltaNewton_bkq_;
+
 mutable VectorValues RgProd_bkq_;
+
 mutable KeySet deltaReplacedMask_bkq_;
+
 NonlinearFactorGraph nonlinearFactors_bkq_;
+
 mutable GaussianFactorGraph linearFactors_bkq_;
+
 ISAM2Params params_bkq_;
+
 mutable boost::optional&lt;double&gt; doglegDelta_bkq_;
+
 KeySet fixedVariables_bkq_;
+
 int update_count_bkq_;
+
+
+
 // to the place between lines 97 ~ 99 of ISAM2.h
 
 void backup(); // to line 199 of ISAM2.h
+
 void recover(); // to line 200 of ISAM2.h
 
+
+
 // from line 395 of ISAM2.cpp
+
 void ISAM2::backup(){ 
+
   variableIndex_bkq_ = variableIndex_;
+
   theta_bkq_ = theta_;
+
   delta_bkq_ = delta_;
+
   deltaNewton_bkq_ = deltaNewton_;
+
   RgProd_bkq_ = RgProd_;
+
   nonlinearFactors_bkq_ = nonlinearFactors_;
+
   fixedVariables_bkq_ = fixedVariables_;
+
   update_count_bkq_ = update_count_;
+
   deltaReplacedMask_bkq_ = deltaReplacedMask_;
+
   linearFactors_bkq_ = linearFactors_;
+
   doglegDelta_bkq_ = doglegDelta_;
+
   params_bkq_ = params_;
+
   // nodes_bkq_ = nodes_;
+
   // roots_bkq_ = roots_;
+
 }
 
 void ISAM2::recover(){
+
   variableIndex_ = variableIndex_bkq_;
+
   theta_ = theta_bkq_;
+
   delta_ = delta_bkq_;
+
   deltaNewton_ = deltaNewton_bkq_;
+
   RgProd_ = RgProd_bkq_;
+
   nonlinearFactors_ = nonlinearFactors_bkq_;
+
   fixedVariables_ = fixedVariables_bkq_;
+
   update_count_ = update_count_bkq_;
+
   deltaReplacedMask_ = deltaReplacedMask_bkq_;
+
   linearFactors_ = linearFactors_bkq_;
+
   doglegDelta_ = doglegDelta_bkq_;
+
   params_ = params_bkq_;
+
   // nodes_ = nodes_bkq_;
+
   // roots_ = roots_bkq_;
+
 }
+
 // to line 427 of ISAM2.cpp
