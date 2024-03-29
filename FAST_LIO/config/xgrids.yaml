@@ -1,0 +1,32 @@
+common:
+    lid_topic:  "/laser_cloud_flat"
+    imu_topic:  "/insta360/imu"
+    time_sync_en: false         # ONLY turn on when external time synchronization is really not possible
+    time_offset_from_lidar: -0.05245965
+
+preprocess:
+    lidar_type: 5                # 1 for Livox serials LiDAR, 2 for Velodyne LiDAR, 3 for ouster LiDAR, 5 for XGRIDS (lidarmsg already undistored)
+    scan_line: 0
+    blind: 0
+
+mapping:
+    acc_cov: 0.1
+    gyr_cov: 0.1
+    b_acc_cov: 0.0001
+    b_gyr_cov: 0.0001
+    fov_degree:    300
+    det_range:     150.0
+    #extrinsic_T: [-0.089511, -0.0427936,   0.216933]
+    #extrinsic_R: [-0.0184032,  -0.016276,  -0.999698,
+    #            0.999799, 0.00761117,  -0.018529,
+    #            0.00791045,  -0.999839,  0.0161326]
+    extrinsic_T: [0.088096, -0.061350, -0.062576]
+    extrinsic_R: [0.999722, -0.022495, -0.007044,
+        0.022363,  0.999584, -0.018206,
+        0.007451,  0.018044,  0.999809  ]
+
+
+publish:
+    scan_publish_en:  true       # 'false' will close all the point cloud output
+    dense_publish_en: true       # false will low down the points number in a global-frame point clouds scan.
+    scan_bodyframe_pub_en: true  # output the point cloud scans in IMU-body-frame

@@ -1,0 +1,25 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="true" />
+
+  <node 
+		pkg="std_loop" 
+		type="std_pgo" 
+		name="std_pgo" 
+		output="screen" 
+	/>
+  <arg name="arg1" default="0.55"/>
+  <param name="icp_threshold" value="$(arg arg1)" />
+  <param name="calc_gt_enable" type="bool" value = "false"/>
+  <param name="data_name" type="string" value = "ka"/>
+  <param name="setting_path" type="string" value = "$(find std_loop)/config/config_horizon.yaml"/>
+  <param name="bag_file" type="string" value = "/usb/Bags/loop/ka/ka.bag"/>
+  <param name="pose_file" type="string" value = "/usb/Bags/loop/ka/ka_pose.txt"/>
+  <param name="loop_gt_file" type="string" value = "/home/ycj/matlab_code/loop_detection/gt/sustech_gt/sustech2_gt.txt"/>
+
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_loop)/rviz_cfg/ba.rviz" />
+  </group>
+
+</launch>

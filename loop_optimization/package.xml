@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>loop_optimization</name>
+  <version>0.1.0</version>
+  <description>The loop_optimization package</description>
+
+  <maintainer email="zuhaozou@todo.todo">zuhaozou</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+
+  <export>
+    <nodelet plugin="${prefix}/plugin_info.xml" />
+  </export>
+</package>

@@ -1,0 +1,36 @@
+common:
+##    lid_topic:  "/velodyne_pcl_gen/cloud"
+##    imu_topic:  "/applanix/imu"
+##    lid_topic:  "velodyne_points"
+##    imu_topic:  "imu/data"
+##    lid_topic:  "points_raw"
+##    imu_topic:  "imu/data"
+##    lid_topic:  "/kitti/velo/pointcloud"
+##    imu_topic:  "/kitti/oxts/imu"
+    lid_topic:  "points_raw"
+    imu_topic:  "imu_raw"
+      
+preprocess:
+    lidar_type: 2                # VLP-16 LiDAR
+    scan_line: 32
+    blind: 4
+
+mapping:
+    acc_cov: 0.1
+    gyr_cov: 0.1
+    b_acc_cov: 0.0001
+    b_gyr_cov: 0.0001
+    fov_degree:    180
+    det_range:     100.0
+    extrinsic_T: [ 0, 0, 0.28] #ULHK   #[ -0.5, 1.4, 1.5 ] #utbm
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+    # extrinsic_R: [ 0, 1, 0, 
+    #               -1, 0, 0, 
+    #                0, 0, 1]
+    #extrinsic_T: [0.112,  0.176, -0.247] #lidar to imu
+    #extrinsic_R:
+    #      [  -0.012269305293716,   0.999825046159671,  -0.014118825001462,
+    #         -0.999920531909150,  -0.012308942481016,  -0.002723931262439,
+    #         -0.002897242505046,   0.014084282261136,   0.999896614145210 ]

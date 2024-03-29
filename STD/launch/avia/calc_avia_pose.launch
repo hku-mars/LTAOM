@@ -1,0 +1,19 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="true" />
+
+  <node 
+		pkg="std_loop" 
+		type="calc_avia_pose" 
+		name="calc_avia_pose" 
+		output="screen" 
+	/>
+  <param name="bag_path" type="string" value = "/usb/Bags/loop/avia/flight7.bag"/>
+  <param name="pose_path" type="string" value = "/usb/Bags/loop/avia/flight7.txt"/>
+
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_loop)/rviz_cfg/loop.rviz" />
+  </group>
+
+</launch>

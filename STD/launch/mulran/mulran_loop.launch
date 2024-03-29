@@ -1,0 +1,25 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="false" />
+
+  <node 
+		pkg="std_loop" 
+		type="std_loop_detection" 
+		name="std_loop_detection" 
+		output="screen" 
+	/>
+  <arg name="arg1" default="0.02"/>
+  <param name="icp_threshold" value="$(arg arg1)" />
+  <param name="calc_gt_enable" type="bool" value = "false"/>
+  <param name="data_name" type="string" value = "kaist03"/>
+  <param name="setting_path" type="string" value = "$(find std_loop)/config/config_velo_mulran.yaml"/>
+  <param name="bag_file" type="string" value = "/usb/Bags/loop/MULRAN/KAIST03/kaist03.bag"/>
+  <param name="pose_file" type="string" value = "/usb/Bags/loop/MULRAN/KAIST03/global_pose.csv"/>
+  <param name="loop_gt_file" type="string" value = "/home/ycj/matlab_code/loop_detection/gt/mulran_gt/kaist03_gt.txt"/>
+
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_loop)/rviz_cfg/loop.rviz" />
+  </group>
+
+</launch>

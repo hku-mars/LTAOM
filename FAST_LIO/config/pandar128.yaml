@@ -1,0 +1,34 @@
+common:
+    lid_topic:  "/hesai/pandar_points"
+    imu_topic:  "/mavros/imu/data"
+    time_sync_en: false         # ONLY turn on when external time synchronization is really not possible
+    time_offset_from_lidar: -0.10
+
+preprocess:
+    lidar_type: 4                # 1 for Livox serials LiDAR, 2 for Velodyne LiDAR, 3 for ouster LiDAR, 4 for hesai pandar LiDAR
+    scan_line: 128
+    blind: 4
+
+mapping:
+    acc_cov: 0.1
+    gyr_cov: 0.1
+    b_acc_cov: 0.0001
+    b_gyr_cov: 0.0001
+    fov_degree:    360
+    det_range:     300.0
+
+    #extrinsic_T: [ 0.043387, -0.053487,  0.056788]
+    #extrinsic_R: [ -0.998534,  0.053630, -0.007388,
+    #  -0.053551, -0.998509, -0.010542,
+    #  -0.007942, -0.010131, 0.999917]
+
+    extrinsic_R:
+         [      0.999789347752932 , -0.020466022556991,  -0.00154985175530,
+               -0.020441260332371,  -0.999684587556968,   0.014590417303113,
+               -0.001847970722415,  -0.014555662875716,  -0.999892353047296]
+    extrinsic_T: [0.101800000000000, -0.023700000000000, 0.013700000000000] #lidar to imu
+
+publish:
+    scan_publish_en:  true       # 'false' will close all the point cloud output
+    dense_publish_en: false       # false will low down the points number in a global-frame point clouds scan.
+    scan_bodyframe_pub_en: false  # output the point cloud scans in IMU-body-frame

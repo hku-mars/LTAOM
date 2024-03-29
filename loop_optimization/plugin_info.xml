@@ -1,0 +1,8 @@
+<library path="lib/libloop_optimization_plugin">
+        <class name="loop_optimization/loop_optimization_plugin" type="loop_optimization_plugin"
+                base_class_type="nodelet::Nodelet">
+                <description>
+                        loop_optimization.
+                </description>
+        </class>
+</library>

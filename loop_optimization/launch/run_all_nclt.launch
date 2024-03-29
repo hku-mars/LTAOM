@@ -1,0 +1,41 @@
+<launch>
+        <param name="multisession_mode" type="int" value="0"/>
+        <param name="SaveDir" type="string" value="/home/zuhaozou/ws_LTAOM/logs/"/>
+
+        <node pkg="nodelet" type="nodelet" args="manager" name="sample_nodelet_manager" output="screen">
+            <!--param name="num_worker_threads" value="32" /-->
+        </node>
+
+        <node pkg="nodelet" type="nodelet" args="load fast_lio/fastlio_plugin sample_nodelet_manager"
+            name="fastlio_plugin_loader" output="screen">
+        </node>
+
+        <rosparam command="load" file="$(find fast_lio)/config/velody16.yaml" />
+        <param name="feature_extract_enable" type="bool" value="0"/>
+        <param name="point_filter_num" type="int" value="4"/>
+        <param name="max_iteration" type="int" value="3" />
+        <param name="dense_map_enable" type="bool" value="0" />
+        <param name="fov_degree" type="double" value="180" />
+        <param name="filter_size_surf" type="double" value="0.5" />
+        <param name="filter_size_map" type="double" value="0.5" />
+        <param name="cube_side_length" type="double" value="1000" />
+        <param name="correction_ver_thr" type="double" value="0.45" /> <!--sqr dis-->
+        <param name="correction_dis_interval" type="double" value="200" />
+        <param name="dy_mapretrival_range" type="double" value="50" />
+
+        <rosparam command="load" file="$(find loop_optimization)/launch/loopopt_config_nclt.yaml" />
+        <!--node pkg="nodelet" type="nodelet" args="load loop_optimization/loop_optimization_plugin sample_nodelet_manager"
+            name="loop_optimization_plugin_loader" output="screen">
+        </node-->
+
+        <param name="lcd_config_path" type="string" value="$(find std_loop)/config/config_velo_nclt.yaml" />
+        <arg name="node_start_delay" default="1.0" /> <!-- launch loop detection and fastlio2 nodes at the same time cause Eigen Alignment bug -->
+        <node pkg="nodelet" type="nodelet" args="load std_loop/loop_detection_plugin sample_nodelet_manager"
+            name="loop_detection_plugin_loader" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" output="screen"  >
+        </node>
+
+        <arg name="rviz" default="true" />
+        <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find fast_lio)/rviz_cfg/loam_livox.rviz" />
+        </group>
+</launch>

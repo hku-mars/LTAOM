@@ -1,0 +1,8 @@
+<library path="lib/libloop_detection_plugin">
+        <class name="std_loop/loop_detection_plugin" type="loop_detection_plugin"
+                base_class_type="nodelet::Nodelet">
+                <description>
+                        loop_detection.
+                </description>
+        </class>
+</library>

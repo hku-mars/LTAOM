@@ -1,0 +1,23 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="true" />
+
+  <node 
+		pkg="std_loop" 
+		type="cu_loop" 
+		name="cu_loop" 
+		output="screen" 
+	/>
+  <arg name="arg1" default="0.15"/>
+  <param name="icp_threshold" value="$(arg arg1)" />
+  <param name="data_name" type="string" value = "cu02"/>
+  <param name="setting_path" type="string" value = "$(find std_loop)/config/config_velo_cu.yaml"/>
+  <param name="bag_file" type="string" value = "/usb/Bags/loop/CU/02/02.bag"/>
+  <param name="pose_file" type="string" value = "/usb/Bags/loop/CU/02/02.csv"/>
+
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_loop)/rviz_cfg/loop.rviz" />
+  </group>
+
+</launch>

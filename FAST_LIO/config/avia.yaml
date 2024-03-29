@@ -1,0 +1,20 @@
+common:
+    lid_topic:  "/livox/lidar"
+    imu_topic:  "/livox/imu"
+
+preprocess:
+    lidar_type: 1                # Livox Avia LiDAR
+    scan_line: 4
+    blind: 0.5
+
+mapping:
+    acc_cov: 2
+    gyr_cov: 0.0001
+    b_acc_cov: 0.2
+    b_gyr_cov: 0.000001
+    fov_degree:    90
+    det_range:     100.0
+    extrinsic_T: [ -0.5165, 0.02326, -0.0284 ]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]

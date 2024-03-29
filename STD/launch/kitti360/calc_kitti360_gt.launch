@@ -1,0 +1,23 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="true" />
+
+  <node 
+		pkg="std_loop" 
+		type="calc_kitti360_gt" 
+		name="calc_kitti360_gt" 
+		output="screen" 
+	/>
+  <arg name="arg1" default="0.5"/>
+  <param name="icp_threshold" value="$(arg arg1)" />
+  <param name="data_name" type="string" value = "kitti360-04"/>
+  <param name="setting_path" type="string" value = "$(find std_loop)/config/config_velo_kitti_fine.yaml"/>
+  <param name="lidar_data_path" type="string" value = "/data/KITTI-360/data_3d_raw/2013_05_28_drive_0004_sync/"/>
+  <param name="pose_file" type="string" value = "/data/KITTI-360/data_3d_raw/2013_05_28_drive_0004_sync/poses.txt"/>
+
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_loop)/rviz_cfg/loop.rviz" />
+  </group>
+
+</launch>

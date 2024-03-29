@@ -1,0 +1,21 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+  <arg name="rviz" default="true" />
+
+  <node 
+		pkg="std_loop" 
+		type="calc_cu_gt" 
+		name="calc_cu_gt" 
+		output="screen" 
+	/>
+  <param name="data_name" type="string" value = "cu02"/>
+  <param name="setting_path" type="string" value = "$(find std_loop)/config/config_velo_cu.yaml"/>
+  <param name="bag_file" type="string" value = "/usb/Bags/loop/CU/02/02.bag"/>
+  <param name="pose_file" type="string" value = "/usb/Bags/loop/CU/02/02.csv"/>
+  <param name="result_path" type="string" value = "/home/ycj/matlab_code/loop_detection/gt/cu_gt/cu02_gt.txt"/>
+  <group if="$(arg rviz)">
+    <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find std_loop)/rviz_cfg/loop.rviz" />
+  </group>
+
+</launch>

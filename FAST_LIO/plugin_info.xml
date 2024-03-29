@@ -1,0 +1,8 @@
+<library path="lib/libfastlio_plugin">
+        <class name="fast_lio/fastlio_plugin" type="fastlio_plugin"
+                base_class_type="nodelet::Nodelet">
+                <description>
+                        fastlio_mapping.
+                </description>
+        </class>
+</library>

@@ -1,0 +1,15 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+
+	<arg name="rviz" default="true" />
+
+        <node pkg="fast_lio" type="map_eva" name="mapconsistency_eva" output="screen" />
+
+        <param name="bag_file" type="string" value = "/home/zuhaozou/ws_LTAOM/logs/undistoted_scans.bag"/>
+        <param name="pose_file" type="string" value = "/home/zuhaozou/ws_LTAOM/logs/scanposes_corrected.txt"/>
+
+	<group if="$(arg rviz)">
+	<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find fast_lio)/rviz_cfg/loam_livox.rviz" />
+	</group>
+
+</launch>

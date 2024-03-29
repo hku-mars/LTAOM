@@ -1,0 +1,53 @@
+%YAML:1.0
+
+# pre process
+ds_size: 0.5
+useful_corner_num: 30
+stop_skip_enable: 0
+
+# key points
+plane_detection_thre: 0.01
+plane_merge_normal_thre: 0.1
+plane_merge_dis_thre: 0.3
+voxel_size: 2
+voxel_init_num: 10
+proj_plane_num: 1
+proj_image_resolution: 0.5
+proj_image_high_inc: 0.1
+proj_dis_min: 0.2
+proj_dis_max: 5
+summary_min_thre: 8
+line_filter_enable: 1
+
+# std descriptor
+descriptor_near_num: 20
+descriptor_min_len: 3
+descriptor_max_len: 50
+max_constrait_dis: 2
+triangle_resolution: 0.2
+
+# candidate search
+skip_near_num: 50
+candidate_num: 5
+sub_frame_num: 20
+icp_threshold: 0.15
+ransac_Rt_thr: 4
+similarity_threshold: 0.7
+rough_dis_threshold: 0.01
+normal_threshold: 0.1
+dis_threshold: 0.5
+
+# result record
+is_kitti: 1
+
+# extrinsic
+T_lidar_to_vehicle: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: d
+  data: [-0.9999829,  -0.00583983,  -5.2257060e-06, 1.7042,
+        0.00583983,  -0.99998294,  1.77587e-06,    -0.0210,
+        -5.235987e-06, 1.7453e-06, 0.99999999,     1.8047,
+        0,       0,            0,                1]
+# gt file: 0 for kitti, 1 for mulran and cu
+gt_file_style: 1
