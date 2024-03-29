@@ -7,7 +7,7 @@
 
   <license>TODO</license>
 
-  <maintainer email="zuhaozou/xuwei@todo.todo">zuhaozou</maintainer>
+  <maintainer email="zuhaozou@todo.todo">zuhaozou</maintainer>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>geometry_msgs</build_depend>
