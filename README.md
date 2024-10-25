@@ -8,10 +8,10 @@
 </div>
 
 ### 1.1 Paper
-Our paper is available on TODO.com/DOI.TODO .
+Our paper is available on https://onlinelibrary.wiley.com/doi/10.1002/rob.22337 (open access).
 
 ### 1.2 Demo Video
-Our demo video is available on https://youtu.be/DVwppEKlKps .
+Our demo video is available on https://youtu.be/DVwppEKlKps or https://www.bilibili.com/video/BV1rT42197Mg/?spm_id_from=333.999.0.0.
 
 ## 2. Tested Environment
 ### 2.0 **Ubuntu**
@@ -46,7 +46,7 @@ cd ~/ws_LTAOM/src/
 git clone https://github.com/hku-mars/LTAOM.git
 cd ../
 catkin_make
-source ~/catkin_ws/devel/setup.bash
+source ~/ws_LTAOM/devel/setup.bash
 ```
 
 ## 4. Run our examples
@@ -80,7 +80,7 @@ rosparam set /save_map true
 ```
 
 ### 4.3 Multilevel (Livox avia)
-Download dataset from my one drive: TODO.com.
+Download dataset from my one drive: https://connecthkuhk-my.sharepoint.com/:f:/g/personal/u3008067_connect_hku_hk/EmhWsq8qR7ZAiVIf4joHetUBdQ-71rHTK1rZD9h2kBX5lg?e=JtDHdh (password: LTAOM-HKUMARS).
 Run
 ```
 cd ~/ws_LTAOM/src/LTAOM
